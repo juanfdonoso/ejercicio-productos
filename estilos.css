@@ -85,6 +85,45 @@ body{
     margin-bottom: 5px;
 }
 
+.listaResultados .contenedor > div.precioClaro{
+    font-size: 14px;
+    background-color: #f3f3f3;
+    padding: 5px;
+    margin-bottom: 5px;
+    text-align: right;
+}
+
+.listaResultados .contenedor > div.precioOscuro{
+    font-size: 14px;
+    background-color: #dadada;
+    padding: 5px;
+    margin-bottom: 5px;
+    text-align: right;
+}
+
+.listaResultados .contenedor > div.errores{
+    grid-column-end: span 4;
+    font-weight: 600;
+    font-size: 14px;
+    color: darkred;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.listaResultados .contenedor > div.subirFoto{
+    grid-column-end: span 4;
+    font-weight: 600;
+    font-size: 14px;
+    color: darkgreen;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.listaResultados .contenedor .fotoChica{
+    width: 50px;
+    margin-right: 5px;
+}
+
 .boton{
     border: none;
     color: rgb(131, 58, 214);
@@ -98,6 +137,38 @@ body{
     border: none;
 }
 
+/********* ESTILOS SUBIR ARCHIVOS **********/
+
+.contenedorFormulario{
+    width: 100%;
+    min-width: 400px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.formulario{
+    width: 800px;
+    background-color: white;
+    padding: 10px;
+    min-height: 400px;
+}
+
+.botonSubirFoto{
+    border: solid 1px rgb(131, 58, 214);
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px;
+    color: rgb(131, 58, 214);
+    cursor: pointer;
+    background-color: white;
+}
+
+.botonSubirFoto:hover{
+    background-color: rgb(131, 58, 214);
+    color: white;
+}
 
 
 /*****  VENTANA MODAL  ******/
