@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,9 @@
     <script src="./scripts.js"></script> 
 </head>
 <body>
+<?php
+if (isset($_SESSION["administrador"])){
+?>
 <div class="header">
 <h1>Fotos productos</h1>
 </div>
@@ -16,7 +20,7 @@
 <?php
 if (isset($_REQUEST["id"])){
     $id = $_REQUEST["id"];
-    include "conexion.php";
+    include "../conexion.php";
     $sql = "select producto from juanf_productos where idProducto = ".$id;
     $rs = ejecutar($sql);
     $dato = mysqli_fetch_array($rs);
@@ -45,6 +49,12 @@ if (isset($_REQUEST["id"])){
     echo "</script>";
 }
 ?>
-    
+<?php
+}else{
+    echo '<script language="javascript">';
+    echo 'window.location.assign("../admin/index.php");';
+    echo '</script>';
+}
+?>    
 </body>
 </html>

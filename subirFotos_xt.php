@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +7,13 @@
     <title>Document</title>
 </head>
 <body>
+<?php
+if (isset($_SESSION["administrador"])){
+?>
     <?php
     //checamos hemos enviado el formulario
     if (isset($_POST["id"])){
-        include "conexion.php";
+        include "../conexion.php";
         $id = $_POST["id"];
         $nombreFoto = $_FILES["foto"]["name"];
         $tipo = $_FILES["foto"]["type"];
@@ -74,6 +78,12 @@
 
     }
     ?>
-
+<?php
+}else{
+    echo '<script language="javascript">';
+    echo 'window.location.assign("../admin/index.php");';
+    echo '</script>';
+}
+?>
 </body>
 </html>
